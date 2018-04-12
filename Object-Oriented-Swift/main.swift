@@ -69,9 +69,19 @@ print("Username: \(user.name), email: \(user.email)")
 
 
 
+struct Person {
+    let firstName: String
+    let lastName: String
+    
+    func fullName() -> String {
+        return "\(firstName) \(lastName)"
+    }
+}
 
+let aPerson = Person(firstName: "Thomas", lastName: "Dimnet")
+let myFullName: String = aPerson.fullName()
 
-
+print(myFullName)
 
 
 
