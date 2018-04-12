@@ -24,6 +24,12 @@ struct Point {
     let x: Int
     let y: Int
     
+    // Intializer method
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
     // The two lines below are documentation comments and return a description
     /// Returns the surrounding points in range of
     /// the current one
