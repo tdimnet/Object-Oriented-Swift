@@ -21,5 +21,15 @@ struct Point {
     let y: Int
 }
 
-let p1 = Point(x: 0, y: 0)
+let coordinatePoint = Point(x: 0, y: 2) // Here we create an instance of the struct
 
+print(coordinate1.x)
+
+struct User {
+    let name: String
+    let email: String
+}
+
+let user = User(name: "Jim", email: "jim@j.com")
+
+print("Username: \(user.name), email: \(user.email)")
