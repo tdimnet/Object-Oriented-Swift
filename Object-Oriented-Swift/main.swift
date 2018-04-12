@@ -48,9 +48,10 @@ struct Point {
 }
 
 let coordinatePoint = Point(x: 0, y: 2) // Here we create an instance of the struct
+print(coordinatePoint.points())
 
-print(coordinate1.x)
-
+let coordinatePoint2 = Point(x: 2, y: 4)
+print(coordinatePoint2.points())
 
 
 
