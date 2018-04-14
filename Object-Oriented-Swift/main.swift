@@ -173,15 +173,36 @@ class Tower {
     }
 }
 
+class LazerTower: Tower {
+    override init(x: Int, y: Int) {
+        super.init(x: x, y: y)
+        self.range = 100
+        self.strength = 100
+    }
+    
+    override func fire(at enemy: Enemy) {
+        while enemy.life >= 0 {
+            enemy.decreaseLife(by: strength)
+        }
+        
+        print("Enemy destroyed!")
+    }
+}
+
+
+
 let tower = Tower(x: 0, y: 0)
 let enemy = Enemy(x: 1, y: 1)
 let enemy2 = Enemy(x: 4, y: 6)
 let superEnemy = SuperEnemy(x: 2, y: 1)
+let lazerTower = LazerTower(x: 2, y: 2)
 
 print("Enemy life: \(enemy2.life), Super Enemy life: \(superEnemy.life)\n")
 
 tower.fire(at: enemy)
 tower.fire(at: enemy2)
+tower.fire(at: superEnemy)
+lazerTower.fire(at: superEnemy)
 
 
 
@@ -220,8 +241,29 @@ class Business {
 
 let someBusiness = Business(name: "Royalcheese Shop", lat: 2.34543, lng: 141.2334)
 
+/*
+ Challenge : Vehicle
+ */
 
+class Vehicle {
+    var numberOfDoors: Int
+    var numberOfWheels: Int
+    
+    init(withDoors doors: Int, andWheels wheels: Int) {
+        self.numberOfDoors = doors
+        self.numberOfWheels = wheels
+    }
+}
 
+class Car: Vehicle {
+    let numberOfSeats: Int = 4
+    
+    override init(withDoors doors: Int, andWheels wheels: Int) {
+        super.init(withDoors: doors, andWheels: wheels)
+    }
+}
+
+let someCar = Car(withDoors: 2, andWheels: 4)
 
 
 
