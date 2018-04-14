@@ -130,6 +130,13 @@ class Enemy {
     }
 }
 
+class SuperEnemy: Enemy {
+    
+}
+
+/*
+ Tower Class
+ */
 class Tower {
     let position: Point
     var range: Int = 1
@@ -163,8 +170,11 @@ class Tower {
 
 let tower = Tower(x: 0, y: 0)
 let enemy = Enemy(x: 1, y: 1)
+let enemy2 = Enemy(x: 4, y: 6)
+let superEnemy = SuperEnemy(x: 2, y: 1)
 
 tower.fire(at: enemy)
+tower.fire(at: enemy2)
 
 
 
