@@ -132,10 +132,28 @@ class Enemy {
 
 
 
+/*
+ Challenge : Shape Class
+ */
+class Shape {
+    var numberOfSides: Int
+    
+    init(numberOfSides: Int) {
+        self.numberOfSides = numberOfSides
+    }
+}
 
+let someShape = Shape(numberOfSides: 2)
 
-
-
+class Tower {
+    let position: Point
+    var range: Int = 1
+    var strength: Int = 1
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+}
 
 
 
