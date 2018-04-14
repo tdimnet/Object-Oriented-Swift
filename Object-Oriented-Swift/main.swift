@@ -114,8 +114,21 @@ let firstRGBColor = RGBColor(red: 86.0, green: 191.0, blue: 131.0, alpha: 1.0)
 print(firstRGBColor.description)
 
 
-
-
+/*
+ Enemy Class
+ */
+class Enemy {
+    var life: Int = 2 // Every instance will have a life value set to two
+    let position: Point
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+    
+    func decreaseLife(by factor: Int) -> Void {
+        life -= factor
+    }
+}
 
 
 
