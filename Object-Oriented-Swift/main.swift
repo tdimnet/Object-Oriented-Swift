@@ -111,7 +111,7 @@ struct RGBColor {
 }
 
 let firstRGBColor = RGBColor(red: 86.0, green: 191.0, blue: 131.0, alpha: 1.0)
-print(firstRGBColor.description)
+print("\(firstRGBColor.description)\n")
 
 
 /*
@@ -131,7 +131,12 @@ class Enemy {
 }
 
 class SuperEnemy: Enemy {
+    let isSuper: Bool = true
     
+    override init(x: Int, y: Int) {
+        super.init(x: x, y: y)
+        self.life = 50
+    }
 }
 
 /*
@@ -172,6 +177,8 @@ let tower = Tower(x: 0, y: 0)
 let enemy = Enemy(x: 1, y: 1)
 let enemy2 = Enemy(x: 4, y: 6)
 let superEnemy = SuperEnemy(x: 2, y: 1)
+
+print("Enemy life: \(enemy2.life), Super Enemy life: \(superEnemy.life)\n")
 
 tower.fire(at: enemy)
 tower.fire(at: enemy2)
