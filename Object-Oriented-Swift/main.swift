@@ -75,7 +75,7 @@ print("Username: \(user.name), email: \(user.email)")
 
 
 
-struct Person {
+struct Person1 {
     let firstName: String
     let lastName: String
     
@@ -84,7 +84,7 @@ struct Person {
     }
 }
 
-let aPerson = Person(firstName: "Thomas", lastName: "Dimnet")
+let aPerson = Person1(firstName: "Thomas", lastName: "Dimnet")
 let myFullName: String = aPerson.fullName()
 
 print(myFullName)
@@ -220,10 +220,10 @@ class Shape {
 let someShape = Shape(numberOfSides: 2)
 
 
+
 /*
  Challenge : Business
  */
-
 struct Location {
     let latitude: Double
     let longitude: Double
@@ -241,10 +241,11 @@ class Business {
 
 let someBusiness = Business(name: "Royalcheese Shop", lat: 2.34543, lng: 141.2334)
 
+
+
 /*
  Challenge : Vehicle
  */
-
 class Vehicle {
     var numberOfDoors: Int
     var numberOfWheels: Int
@@ -267,10 +268,31 @@ let someCar = Car(withDoors: 2, andWheels: 4)
 
 
 
+/*
+ Challenge : Person
+ */
+class Person {
+    let firstName: String
+    let lastName: String
+    
+    init(firstName: String, lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    func fullName() -> String {
+        return "\(firstName) \(lastName)"
+    }
+}
 
+class Doctor: Person {
+    override func fullName() -> String {
+        return "Dr. \(lastName)"
+    }
+}
 
-
-
+let someDoctor = Doctor(firstName: "Sam", lastName: "Smith")
+print("\(someDoctor.fullName())\n")
 
 
 
