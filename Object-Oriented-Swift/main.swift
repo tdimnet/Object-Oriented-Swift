@@ -130,6 +130,15 @@ class Enemy {
     }
 }
 
+class Tower {
+    let position: Point
+    var range: Int = 1
+    var strength: Int = 1
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+}
 
 
 /*
@@ -145,15 +154,44 @@ class Shape {
 
 let someShape = Shape(numberOfSides: 2)
 
-class Tower {
-    let position: Point
-    var range: Int = 1
-    var strength: Int = 1
+
+/*
+ Challenge : Business
+ */
+
+struct Location {
+    let latitude: Double
+    let longitude: Double
+}
+
+class Business {
+    let name: String
+    let location: Location
     
-    init(x: Int, y: Int) {
-        self.position = Point(x: x, y: y)
+    init(name: String, lat: Double, lng: Double) {
+        self.name = name
+        self.location = Location(latitude: lat, longitude: lng)
     }
 }
+
+let someBusiness = Business(name: "Royalcheese Shop", lat: 2.34543, lng: 141.2334)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
