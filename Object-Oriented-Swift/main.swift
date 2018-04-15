@@ -12,7 +12,7 @@ let x1: Int = 0
 let y1: Int = 0
 
 let coordinate1: (x: Int, y: Int) = (0, 0)
-print(coordinate1.x) // <- will be equal to 0
+//print(coordinate1.x) // <- will be equal to 0
 
 
 /*
@@ -54,10 +54,10 @@ struct Point {
 }
 
 let coordinatePoint = Point(x: 0, y: 2) // Here we create an instance of the struct
-print(coordinatePoint.points())
+//print(coordinatePoint.points())
 
 let coordinatePoint2 = Point(x: 2, y: 4)
-print(coordinatePoint2.points())
+//print(coordinatePoint2.points())
 
 
 
@@ -71,7 +71,7 @@ struct User {
 
 let user = User(name: "Jim", email: "jim@j.com")
 
-print("Username: \(user.name), email: \(user.email)")
+//print("Username: \(user.name), email: \(user.email)")
 
 
 
@@ -87,7 +87,7 @@ struct Person1 {
 let aPerson = Person1(firstName: "Thomas", lastName: "Dimnet")
 let myFullName: String = aPerson.fullName()
 
-print(myFullName)
+//print(myFullName)
 
 
 /*
@@ -111,7 +111,7 @@ struct RGBColor {
 }
 
 let firstRGBColor = RGBColor(red: 86.0, green: 191.0, blue: 131.0, alpha: 1.0)
-print("\(firstRGBColor.description)\n")
+//print("\(firstRGBColor.description)\n")
 
 
 /*
@@ -197,12 +197,12 @@ let enemy2 = Enemy(x: 4, y: 6)
 let superEnemy = SuperEnemy(x: 2, y: 1)
 let lazerTower = LazerTower(x: 2, y: 2)
 
-print("Enemy life: \(enemy2.life), Super Enemy life: \(superEnemy.life)\n")
+//print("Enemy life: \(enemy2.life), Super Enemy life: \(superEnemy.life)\n")
 
-tower.fire(at: enemy)
-tower.fire(at: enemy2)
-tower.fire(at: superEnemy)
-lazerTower.fire(at: superEnemy)
+//tower.fire(at: enemy)
+//tower.fire(at: enemy2)
+//tower.fire(at: superEnemy)
+//lazerTower.fire(at: superEnemy)
 
 
 
@@ -292,7 +292,54 @@ class Doctor: Person {
 }
 
 let someDoctor = Doctor(firstName: "Sam", lastName: "Smith")
-print("\(someDoctor.fullName())\n")
+//print("\(someDoctor.fullName())\n")
+
+
+
+/*
+ Value Vs Reference
+ */
+
+struct RealUser {
+    var fullName: String
+    var email: String
+    var age: Int
+}
+
+var realUser = RealUser(fullName: "Thomas Dimnet", email: "thomas.dimnet@example.fr", age: 29)
+var anotherUser = realUser
+
+print(realUser.email)
+print(anotherUser.email)
+
+realUser.email = "td@example.com"
+
+print(realUser.email)
+print(anotherUser.email)
+
+
+class RealPerson {
+    var fullName: String
+    var email: String
+    var age: Int
+    
+    init(name: String, email: String, age: Int) {
+        self.fullName = name
+        self.email = email
+        self.age = age
+    }
+}
+
+var someRealPerson = RealPerson(name: "Tim Cook", email: "tim.cook@apple.com", age: 54)
+var anotherRealPerson = someRealPerson
+
+someRealPerson.email = "tcook@apple.com"
+
+print(someRealPerson.email)
+print(anotherRealPerson.email)
+
+
+
 
 
 
