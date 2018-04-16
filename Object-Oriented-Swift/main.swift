@@ -339,10 +339,26 @@ print(someRealPerson.email)
 print(anotherRealPerson.email)
 
 
+/*
+ Challenge : Tag and Post
+ */
+struct Tag {
+    let name: String
+}
 
+struct Post {
+    let title: String
+    let author: String
+    let tag: Tag
+    
+    func description() -> String {
+        return "\(title) by \(author). Filed under \(tag.name)"
+    }
+}
 
-
-
+let firstPost: Post = Post(title: "My first post", author: "Thomas", tag: Tag(name: "presentation"))
+let postDescription: String = firstPost.description()
+print(postDescription)
 
 
 
