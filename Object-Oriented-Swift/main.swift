@@ -361,6 +361,52 @@ let postDescription: String = firstPost.description()
 print(postDescription)
 
 
+/*
+ Challenge : Tag and Post
+ */
+
+class OtherPoint {
+    var x: Int
+    var y: Int
+    
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+}
+
+class Machine {
+    var location: OtherPoint
+    
+    init() {
+        self.location = OtherPoint(x: 0, y: 0)
+    }
+    
+    func move(_ direction: String) {
+        print("Do nothing! I am a machine!")
+    }
+}
+
+class Robot: Machine {
+    override func move(_ direction: String) {
+        switch direction {
+        case "Up":
+            location.y += 1
+        case "Down":
+            location.y -= 1
+        case "Left":
+            location.x -= 1
+        case "Right":
+            location.x += 1
+        default:
+            break
+        }
+    }
+}
+
+
+
+
 
 
 
